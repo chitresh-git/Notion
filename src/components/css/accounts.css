@@ -1,0 +1,64 @@
+.avatar{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* margin-left: 1%; */
+  }
+.account-avatar{
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* margin-left: 1%; */
+  }
+
+  .account-name{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
+    color: white;
+    font-size: larger;
+    
+  }
+
+  .account-bio{
+    text-transform: uppercase;
+    color: rgb(209, 209, 209);
+  }
+
+  .account-body{
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+
+.account-outer{
+      width: 50%;
+      margin: auto;
+      cursor: pointer;
+
+  }
+
+.account-body:hover{
+    background-color: rgb(44, 44, 44);
+}
+
+@media only screen and (max-width: 768px) { 
+.account-outer{
+  width: 90%;
+}
+.account-name{
+  font-size: smaller;
+}
+
+.account-avatar{
+  width: 15%;
+  height: 15%;
+}
+
+.account-bio{
+  font-size: x-small;
+}
+
+}

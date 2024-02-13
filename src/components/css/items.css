@@ -1,0 +1,86 @@
+#item {
+  width: 60%;
+  position: relative;
+  margin: auto;
+  font-family: 'EB Garamond', serif;
+
+}
+
+
+#outer{
+
+  cursor: pointer;
+}
+#title {
+  font-weight: bolder;
+  text-transform: capitalize;
+  font-size: x-large;
+}
+
+.box {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+
+}
+
+.heading {
+  font-family: 'EB Garamond', serif;
+  text-align: center;
+
+}
+
+
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.avatar-body {
+  margin-left: 2%;
+}
+
+.avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 10%;
+}
+
+.name {
+  position: relative;
+  font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
+  text-transform: capitalize;
+  cursor: pointer;
+  font-size: large;
+}
+
+
+@media only screen and (max-width: 768px) {
+  #item {
+    width: 100%;
+  }
+
+  .avatar {
+    margin-bottom: 8%;
+    margin-top: 10%;
+  }
+
+  .avatar-body {
+    margin-left: 0%;
+  }
+
+  .author-name {
+    margin-top: 200%;
+  }
+
+  .name {
+    font-size: medium;
+  }
+
+  #title {
+    font-size: large;
+  }
+}
