@@ -67,6 +67,9 @@
     text-decoration: none;
     cursor: pointer;
   }
+  .heading{
+    text-transform: capitalize;
+  }
   
 
   @media only screen and (max-width: 768px) { 
@@ -91,6 +94,10 @@
     .lower-title{
       font-size: small;
       
+    }
+    .heading-single{
+      font-size:x-large;
+      font-weight: bold;
     }
   
   }

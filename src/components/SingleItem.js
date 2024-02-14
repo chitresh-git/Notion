@@ -51,7 +51,7 @@ const SingleItem = () => {
   });
   if (loading) return <p> </p>;
   if (error) return <p>Error: {error.message}</p>;
-   console.log(data.posts.length)
+  console.log(data.posts.length)
   return (
     <>
       <div className='' id='singleitem'>
@@ -59,10 +59,10 @@ const SingleItem = () => {
         <div class="card border-0 " id='singleInner' >
 
           <p className=' title p-2 my-0 ms-4 ' id='uppertitle'>{title}</p>
-<Link to={pic.url} target='_blank'>
+          <Link to={pic.url} target='_blank'>
 
-          <img src={pic.url} class="card-img-top  p-3" alt="..." id='img' />
-</Link>
+            <img src={pic.url} class="card-img-top  p-3" alt="..." id='img' />
+          </Link>
 
           <div class="card-body card-item "   >
             <hr />
@@ -82,13 +82,27 @@ const SingleItem = () => {
             <p class="card-text lower-title"><small class="text-body-secondary">Written on {dateString}</small></p>
             <p class="card-text singlecontent " dangerouslySetInnerHTML={{ __html: sanitizedHTML }}></p>
 
+            <h3>Written By </h3>
+            <a className='user' onClick={() => { handle2() }}>
+
+              {/* <img src={author.avatar.url} alt="Avatar" class="avatar" id='singleavatar'></img> */}
+              <a class="name text-dark mx-0 single-name">{author.name}
+                <small class="text-body-secondary  " > &nbsp;On {dateString}</small>
+          
+              </a>
+            </a>
+
+
+
+
+
           </div>
         </div>
         <hr />
       </div>
       <div >
-        {data.posts.length  > 0 && (
-          <h1 className='heading mt-1'>More From This Author</h1>
+        {data.posts.length > 0 && (
+          <h1 className='heading heading-single mt-1'>More From {author.name}</h1>
         )}
         <div className='ms-5 me-5 '>
           {data.posts?.map((post) => { // this will call Noteitem component htmlFor each note 
