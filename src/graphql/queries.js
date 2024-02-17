@@ -6,7 +6,6 @@ export const GET_POSTS = gql`
     id,
     title,
     date,
-    slug,
     content{
       html
     },

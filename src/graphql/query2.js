@@ -8,7 +8,6 @@ export const GET_POSTS_BY_AUTHOR_ID = gql`
         id,
     title,
     date,
-    slug,
     content{
       html
     },
