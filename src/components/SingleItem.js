@@ -25,17 +25,40 @@ const SingleItem = () => {
 
 
 
+  // const addTargetBlank = (html) => {
+  //   const doc = new DOMParser().parseFromString(html, 'text/html');
+  //   const links = doc.getElementsByTagName('a');
+  //   for (let i = 0; i < links.length; i++) {
+  //     links[i].setAttribute('target', '_blank');
+  //     links[i].setAttribute('rel', 'noopener noreferrer');
+  //   }
+
+
+  //   return doc.documentElement.innerHTML;
+  // };
+
+
   const addTargetBlank = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     const links = doc.getElementsByTagName('a');
     for (let i = 0; i < links.length; i++) {
-      links[i].setAttribute('target', '_blank');
-      links[i].setAttribute('rel', 'noopener noreferrer');
+        links[i].setAttribute('target', '_blank');
+        links[i].setAttribute('rel', 'noopener noreferrer');
     }
 
+    // Center images
+    const images = doc.getElementsByTagName('img');
+    for (let i = 0; i < images.length; i++) {
+        images[i].style.display = 'block';
+        images[i].style.margin = 'auto';
+
+        images[i].style.maxWidth = '100%';
+        images[i].style.height = 'auto';
+    }
 
     return doc.documentElement.innerHTML;
-  };
+};
+
 
   // Add target="_blank" to anchor tags in the HTML content
   const sanitizedHTML = addTargetBlank(content.html);
