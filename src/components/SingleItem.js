@@ -7,6 +7,8 @@ import { useQuery } from '@apollo/client';
 import { GET_POSTS_BY_AUTHOR } from '../graphql/query5'; // Importing the GraphQL query
 import Items from './Items'
 
+
+
 const SingleItem = () => {
 
   const navigate = useNavigate();
@@ -23,19 +25,6 @@ const SingleItem = () => {
     navigate("/profile")
   }
 
-
-
-  // const addTargetBlank = (html) => {
-  //   const doc = new DOMParser().parseFromString(html, 'text/html');
-  //   const links = doc.getElementsByTagName('a');
-  //   for (let i = 0; i < links.length; i++) {
-  //     links[i].setAttribute('target', '_blank');
-  //     links[i].setAttribute('rel', 'noopener noreferrer');
-  //   }
-
-
-  //   return doc.documentElement.innerHTML;
-  // };
 
 
   const addTargetBlank = (html) => {
@@ -74,9 +63,18 @@ const SingleItem = () => {
   });
   if (loading) return <p> </p>;
   if (error) return <p>Error: {error.message}</p>;
-  console.log(data.posts.length)
+  
+  // ___________________________________________________________________________
+  
+  
+
+
+
   return (
     <>
+
+
+
       <div className='' id='singleitem'>
 
         <div class="card border-0 " id='singleInner' >
@@ -93,22 +91,18 @@ const SingleItem = () => {
             <a className='user' onClick={() => { handle2() }}>
 
               <img src={author.avatar.url} alt="Avatar" class="avatar" id='singleavatar'></img>
-              <a class="name text-dark mx-3 single-name">{author.name}
+              <a class="name text-dark mx-2 single-name">{author.name}
                 <small class="text-body-secondary mr-3 follow" > &nbsp; &nbsp;Follow</small>
               </a>
             </a>
 
-
-            <br />
-            <br />
-            <h4 class="card-title title my-0 lower-title">{title}</h4>
-            <p class="card-text lower-title"><small class="text-body-secondary">Written on {dateString}</small></p>
+            <h4 class="card-title title  lower-title">{title}</h4>
+            <p class="card-text "><small class="text-body-secondary">Written on {dateString}</small></p>
             <p class="card-text singlecontent " dangerouslySetInnerHTML={{ __html: sanitizedHTML }}></p>
 
             <h3>Written By </h3>
             <a className='user' onClick={() => { handle2() }}>
 
-              {/* <img src={author.avatar.url} alt="Avatar" class="avatar" id='singleavatar'></img> */}
               <a class="name text-dark mx-0 single-name">{author.name}
                 <small class="text-body-secondary  " > &nbsp;On {dateString}</small>
           
@@ -119,9 +113,9 @@ const SingleItem = () => {
 
 
 
+        <hr />
           </div>
         </div>
-        <hr />
       </div>
       <div >
         {data.posts.length > 0 && (

@@ -2,7 +2,7 @@ import React from 'react'
 import { useQuery } from '@apollo/client';
 import { GET_POSTS } from '../graphql/queries';
 import Items from './Items';
-import './css/items.css'
+import './css/home.css'
 
 
 const Home = () => {
@@ -24,8 +24,8 @@ const Home = () => {
     <div>
   
       <div className='justify-content-center item'>
-        <h1 className='heading mt-4'>Top  Notions </h1>
-        <div className='m-5  justify-content-center'>
+        <h1 className='home-heading mt-4'>Top  Notions </h1>
+        <div className='mx-5 justify-content-center'>
           {reverseData.map((post) => { // this will call Noteitem component htmlFor each note 
             return <Items post={post} />
           })}

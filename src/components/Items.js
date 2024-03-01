@@ -43,7 +43,7 @@ const Items = (props) => {
             <a  className='name fs-6 avatar-body' onClick={() => { handle2() }}>
 
             <img src={author.avatar.url} alt="Avatar" class="avatar"></img>
-            <a  class="name text-dark mx-3 author-name pt-3">{author.name}</a>
+            <a  class="name text-dark mx-2 author-name pt-3">{author.name}</a>
             </a>
 
             <div class="row g-0 bg-light position-relative box"  onClick={() => { handlclick(title, post) }}>
