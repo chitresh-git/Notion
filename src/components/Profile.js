@@ -15,6 +15,7 @@ const Profile = () => {
     const { author } = user
 
     const { id, name, avatar, email, bio, city, insta, linkedin } = author
+    console.log(id)
     const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR_ID, {
         variables: { id },
     });
@@ -29,7 +30,7 @@ const Profile = () => {
             <div className='dp   mt-3'>
 
                 <Link to={avatar.url} target="_blank">
-                    <img src={avatar.url} alt="Avatar" class="avatarprofile " id='singleavatar'></img></Link>
+                    <img  src={avatar ? avatar.url : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/zTID66Z7QXedgEHVn3dX'} alt="Avatar" class="avatarprofile " id='singleavatar'></img></Link>
                 <div class="card  border-0" >
 
 

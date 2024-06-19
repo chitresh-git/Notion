@@ -1,5 +1,5 @@
 // src/graphql/queries.js
-
+// this query is to fetch data of specific post using author id 
 import { gql } from '@apollo/client';
 
 export const GET_POSTS_BY_AUTHOR_ID = gql`
@@ -8,6 +8,7 @@ export const GET_POSTS_BY_AUTHOR_ID = gql`
         id,
     title,
     date,
+    text,
     content{
       html
     },

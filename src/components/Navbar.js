@@ -46,6 +46,12 @@ const Navbar = () => {
                             <Link to="/contributor" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
                                 Authors
                             </li> </Link>
+                            <Link to="/createAuth" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
+                                Signup
+                            </li> </Link>
+                            <Link to="/createPost" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
+                                 Post Something
+                            </li> </Link>
 
 
                             <li class="nav-item dropdown">

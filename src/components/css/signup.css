@@ -1,0 +1,17 @@
+
+.signupform{
+    width: 45% !important;
+}
+.signupcontainer{
+    margin-left: 30% !important;  
+}
+
+@media (max-width: 768px) {
+    .signupform{
+        width: 100% !important;
+    }
+    
+    .signupcontainer{
+        margin-left: 0% !important;  
+    }
+}

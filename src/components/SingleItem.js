@@ -14,7 +14,7 @@ const SingleItem = () => {
   const navigate = useNavigate();
   const context = useContext(rootcontext)
   const { selectedpost, setuser } = context
-  const { title, pic, date, content, author, id } = selectedpost.post
+  const { title, pic, date, content, author, id, text } = selectedpost.post
   var date2 = new Date(date);
 
   // Convert the Date object to a string
@@ -31,27 +31,26 @@ const SingleItem = () => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     const links = doc.getElementsByTagName('a');
     for (let i = 0; i < links.length; i++) {
-        links[i].setAttribute('target', '_blank');
-        links[i].setAttribute('rel', 'noopener noreferrer');
+      links[i].setAttribute('target', '_blank');
+      links[i].setAttribute('rel', 'noopener noreferrer');
     }
 
     // Center images
     const images = doc.getElementsByTagName('img');
     for (let i = 0; i < images.length; i++) {
-        images[i].style.display = 'block';
-        images[i].style.margin = 'auto';
+      images[i].style.display = 'block';
+      images[i].style.margin = 'auto';
 
-        images[i].style.maxWidth = '100%';
-        images[i].style.height = 'auto';
+      images[i].style.maxWidth = '100%';
+      images[i].style.height = 'auto';
     }
 
     return doc.documentElement.innerHTML;
-};
+  };
 
 
   // Add target="_blank" to anchor tags in the HTML content
-  const sanitizedHTML = addTargetBlank(content.html);
-
+  const sanitizedHTML = content ? addTargetBlank(content.html) : '';
 
 
 
@@ -63,10 +62,10 @@ const SingleItem = () => {
   });
   if (loading) return <p> </p>;
   if (error) return <p>Error: {error.message}</p>;
-  
+
   // ___________________________________________________________________________
-  
-  
+
+
 
 
 
@@ -98,14 +97,18 @@ const SingleItem = () => {
 
             <h4 class="card-title title  lower-title">{title}</h4>
             <p class="card-text "><small class="text-body-secondary">Written on {dateString}</small></p>
-            <p class="card-text singlecontent " dangerouslySetInnerHTML={{ __html: sanitizedHTML }}></p>
+            {/* <p className="card-text singlecontent" dangerouslySetInnerHTML={{ __html: sanitizedHTML || text }}></p> */}
+            <p className="card-text singlecontent">
+              {content ? <span dangerouslySetInnerHTML={{ __html: sanitizedHTML }}></span> : text}
+            </p>
+
 
             <h3>Written By </h3>
             <a className='user' onClick={() => { handle2() }}>
 
               <a class="name text-dark mx-0 single-name">{author.name}
                 <small class="text-body-secondary  " > &nbsp;On {dateString}</small>
-          
+
               </a>
             </a>
 
@@ -113,7 +116,7 @@ const SingleItem = () => {
 
 
 
-        <hr />
+            <hr />
           </div>
         </div>
       </div>

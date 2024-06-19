@@ -1,4 +1,5 @@
 // src/graphql/queries.js
+// this will fetch specific post and its author 
 
 import { gql } from '@apollo/client';
 
@@ -8,6 +9,7 @@ query GetPostById($postId: ID!) {
     id,
     title,
     date,
+    text,
     content{
       html
     },

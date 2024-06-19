@@ -13,7 +13,8 @@ import {
 import Contributers from './components/Contributers';
 import Footer from './components/Footer';
 
-
+import CreateAuthor from './components/CreateAuthor';
+import CreatePost from './components/CreatePost';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
         <Route exact path='/expandpost'  element={<SingleItem/>}/>
         <Route exact path='/profile'  element={<Profile/>}/>
         <Route exact path='/contributor'  element={<Contributers/>}/>
+        <Route exact path='/createAuth'  element={<CreateAuthor/>}/>
+        <Route exact path='/createPost'  element={<CreatePost/>}/>
         </Routes>
 
          <Footer/>

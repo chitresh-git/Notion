@@ -1,3 +1,4 @@
+// this all the post except the mentioned one 
 import { gql } from '@apollo/client';
 
 export const GET_POSTS_BY_AUTHOR = gql`
@@ -6,6 +7,7 @@ export const GET_POSTS_BY_AUTHOR = gql`
         id,
     title,
     date,
+    text,
     content{
       html
     },
