@@ -37,7 +37,7 @@ const Profile = () => {
 
     return (
         <>
-            <div className='dp   mt-3'>
+            <div className='dp   mt-3 dpwidth'>
 
                 <Link to={avatar.url} target="_blank">
                     <img  src={avatar ? avatar.url : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/zTID66Z7QXedgEHVn3dX'} alt="Avatar" class="avatarprofile " id='singleavatar'></img></Link>
@@ -85,7 +85,7 @@ const Profile = () => {
                     <h1 className='heading mt-1'>Recent Notions</h1>
                 )}
 
-                <div className='ms-5 me-5 '>
+                <div className='profileItemsWidth'>
                     {reverseData?.map((post) => { // this will call Noteitem component htmlFor each note 
                         return <Items post={post} />
                     })}

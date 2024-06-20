@@ -38,7 +38,7 @@ const Items = (props) => {
         plainText = text;
     }
 
-    const maxLength = 150;
+    const maxLength = window.innerWidth < 768 ? 50 : 150; // set the text length according to window size 
     if (plainText.length > maxLength) {
         plainText = plainText.substring(0, maxLength).trim();  // Truncating the content of post
         plainText += '. . . .';
