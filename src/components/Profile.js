@@ -13,34 +13,34 @@ const Profile = () => {
     const context = useContext(rootcontext)
     const { user } = context
     const { author } = user
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const { id, name, avatar, email, bio, city, insta, linkedin } = author
 
     const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR_ID, {
         variables: { id },
     });
     if (loading) return <p> </p>;
-    if (error){ }
+    if (error) { }
 
-    
-    
+
+
     // console.log(data)
     if (data === undefined) {
         console.error("Error: 'data.posts' is undefined");
-        setTimeout(() => { window.location.reload();  }, 0);
+        setTimeout(() => { window.location.reload(); }, 0);
 
-         navigate('/')
+        navigate('/')
     }
-    const temp=data.posts
-    const developerId="clsd6tbz20ozg0aoahpfq40u5" 
-    const reverseData=[...temp].reverse() // reversing the data of posts 
+    const temp = data.posts
+    const developerId = "clsd6tbz20ozg0aoahpfq40u5"
+    const reverseData = [...temp].reverse() // reversing the data of posts 
 
     return (
         <>
             <div className='dp   mt-3 dpwidth'>
 
                 <Link to={avatar.url} target="_blank">
-                    <img  src={avatar ? avatar.url : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/zTID66Z7QXedgEHVn3dX'} alt="Avatar" class="avatarprofile " id='singleavatar'></img></Link>
+                    <img src={avatar ? avatar.url : 'https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/zTID66Z7QXedgEHVn3dX'} alt="Avatar" class="avatarprofile " id='singleavatar'></img></Link>
                 <div class="card  border-0" >
 
 
@@ -50,11 +50,11 @@ const Profile = () => {
                             &nbsp;   {city}</small> </h5>
                         <h5>
                             <a class="name text-dark  dpname ">{name}
-                               
-                                {developerId===id ? (
+
+                                {developerId === id ? (
                                     <small className="text-body-secondary ms-0 follow">&nbsp;Developer</small>
                                 ) : (
-                                    <small class="text-body-secondary ms-0 follow"> &nbsp;Author</small>                                )}
+                                    <small class="text-body-secondary ms-0 follow"> &nbsp;Author</small>)}
                             </a>
                         </h5>
 
@@ -83,6 +83,10 @@ const Profile = () => {
             <div >
                 {data.posts.length > 0 && (
                     <h1 className='heading mt-1'>Recent Notions</h1>
+                )}
+                {data.posts.length == 0 && (
+                    <h1 className='heading mt-1 emptypost'>you did not post anything yet</h1>
+
                 )}
 
                 <div className='profileItemsWidth'>
