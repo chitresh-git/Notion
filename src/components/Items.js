@@ -7,7 +7,6 @@ import postcontext from '../contextapi/rootcontext'
 const Items = (props) => {
     const { post } = props
     const { author, title, date, pic, content, text } = post
-
     const contextapi = useContext(postcontext)
     const { setpost, setuser } = contextapi
     let navigate = useNavigate()
@@ -15,7 +14,10 @@ const Items = (props) => {
         setpost({ post: post })
         navigate("/expandpost")
     }
-
+    
+    if (!author) {
+        return null; // Return nothing if author is null
+      }
     const handle2 = () => {
         setuser({ author: author })
         navigate("/profile")

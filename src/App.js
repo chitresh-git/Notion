@@ -1,20 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import SingleItem from './components/SingleItem';
 import Navbar from './components/Navbar';
 import Profile from './components/Profile';
+import Contributers from './components/Contributers';
+import Footer from './components/Footer';
+import CreateAuthor from './components/CreateAuthor';
+import CreatePost from './components/CreatePost';
+import Login from './components/Login';
+import Contact from './components/Contact';
 
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-import Contributers from './components/Contributers';
-import Footer from './components/Footer';
-
-import CreateAuthor from './components/CreateAuthor';
-import CreatePost from './components/CreatePost';
 
 function App() {
 
@@ -31,6 +31,8 @@ function App() {
         <Route exact path='/contributor'  element={<Contributers/>}/>
         <Route exact path='/createAuth'  element={<CreateAuthor/>}/>
         <Route exact path='/createPost'  element={<CreatePost/>}/>
+        <Route exact path='/login'  element={<Login/>}/>
+        <Route exact path='/contact'  element={<Contact/>}/>
         </Routes>
 
          <Footer/>

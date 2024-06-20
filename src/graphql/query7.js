@@ -1,3 +1,5 @@
+// query for creating and publishing the post using author id 
+
 import { gql } from 'graphql-request';
 
 export const CREATE_POST_MUTATION = gql`

@@ -16,7 +16,7 @@ const CreatePost = () => {
 
 
   const authorId = localStorage.getItem('userId') // fetching the author id from the local storage
-  const picId = 'clxlqaank043s07pgg0uiwhdm';   // pic id for our post 
+  const picId = 'clshtqg7h35oc0bo139o0uih9';   // pic id for our post 
 
   // Function to format the current date as 'YYYY-MM-DD'
   const getCurrentDate = () => {
@@ -44,6 +44,7 @@ const CreatePost = () => {
       const data = await client.request(CREATE_POST_MUTATION, variables);
       await handlePublish(data.createPost.id); // Call handlePublish with the post ID
     } catch (error) {
+      setWarning("Some error occured , Try again")
       setLoading(false);
     }
 
@@ -56,14 +57,12 @@ const CreatePost = () => {
       const data = await client.request(PUBLISH_POST_MUTATION, variables);
       setTitle("");
       setText("");
-      setTimeout(() => {
-        window.location.reload();
-      }, 0);
+      setTimeout(() => { window.location.reload();  }, 0);
       navigate("/")
-
     }
     catch (error) {
       setWarning("Some error occured , Try again")
+    
     }
     setLoading(false);
 
@@ -97,10 +96,11 @@ const CreatePost = () => {
               value={text}
               onChange={(e) => setText(e.target.value)}
               minLength={10}
+              maxLength={10000}
               required
             ></textarea>
           </div>
-          <label className={`form-text text-capitalize text-danger bg-dark ${warning ? 'visible' : 'invisible'}`}>{warning}</label>
+          <label className={`mx-3 form-text text-capitalize text-danger bg-dark ${warning ? 'visible' : 'invisible'}`}>{warning}</label>
             <br />
             <button type="submit" className="btn btn-secondary m-3" disabled={loading}>
               {loading ? "Posting..." : "POST"}

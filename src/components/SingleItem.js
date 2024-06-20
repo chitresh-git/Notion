@@ -1,6 +1,6 @@
 import React from 'react'
 import rootcontext from '../contextapi/rootcontext'
-import { useContext } from 'react'
+import { useContext  } from 'react'
 import './css/singleCard.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client';
@@ -10,23 +10,27 @@ import Items from './Items'
 
 
 const SingleItem = () => {
-
+  
+  
   const navigate = useNavigate();
   const context = useContext(rootcontext)
   const { selectedpost, setuser } = context
-  const { title, pic, date, content, author, id, text } = selectedpost.post
-  var date2 = new Date(date);
 
+  const { title, pic, date, content, author, id, text } = selectedpost?.post
+
+
+  var date2 = new Date(date);
+  
   // Convert the Date object to a string
   var dateString = date2.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
-
+  
   const handle2 = () => {
     setuser({ author: author })
     navigate("/profile")
   }
-
-
-
+  
+  
+  
   const addTargetBlank = (html) => {
     const doc = new DOMParser().parseFromString(html, 'text/html');
     const links = doc.getElementsByTagName('a');
@@ -34,42 +38,50 @@ const SingleItem = () => {
       links[i].setAttribute('target', '_blank');
       links[i].setAttribute('rel', 'noopener noreferrer');
     }
-
+    
     // Center images
     const images = doc.getElementsByTagName('img');
     for (let i = 0; i < images.length; i++) {
       images[i].style.display = 'block';
       images[i].style.margin = 'auto';
-
+      
       images[i].style.maxWidth = '100%';
       images[i].style.height = 'auto';
     }
-
+    
     return doc.documentElement.innerHTML;
   };
-
+  
 
   // Add target="_blank" to anchor tags in the HTML content
   const sanitizedHTML = content ? addTargetBlank(content.html) : '';
 
 
 
-  const authorId = author.id
-  const postIdToExclude = id
+  //if (author.id==undefined) navigate('/');  -- error point , when reloading this component
+  let authorId;
+  let postIdToExclude
+  try{
 
-  const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR, {
-    variables: { authorId, postIdToExclude },
-  });
-  if (loading) return <p> </p>;
-  if (error) return <p>Error: {error.message}</p>;
+     authorId = author.id
+     postIdToExclude = id
+  } catch(e){
+        navigate('/')
+  }
+    
+    const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR, {
+      variables: { authorId, postIdToExclude },
+    });
+    if (loading) return <p> </p>;
+    if (error) return <p>Error: {error.message}</p>;
+    
+    // ___________________________________________________________________________
 
-  // ___________________________________________________________________________
+  
+  
 
 
-
-
-
-  return (
+return (
     <>
 
 

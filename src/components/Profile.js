@@ -1,7 +1,7 @@
 import React from 'react'
 import rootcontext from '../contextapi/rootcontext'
 import { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useQuery } from '@apollo/client';
 import { GET_POSTS_BY_AUTHOR_ID } from '../graphql/query2';
 import Items from './Items';
@@ -13,18 +13,28 @@ const Profile = () => {
     const context = useContext(rootcontext)
     const { user } = context
     const { author } = user
-
+    const navigate=useNavigate();
     const { id, name, avatar, email, bio, city, insta, linkedin } = author
-    console.log(id)
+
     const { loading, error, data } = useQuery(GET_POSTS_BY_AUTHOR_ID, {
         variables: { id },
     });
-
     if (loading) return <p> </p>;
-    if (error) return <p>Error: {error.message}</p>;
-    const developerId="clsd6tbz20ozg0aoahpfq40u5" 
+    if (error){ }
+
+    
+    
+    // console.log(data)
+    if (data === undefined) {
+        console.error("Error: 'data.posts' is undefined");
+        setTimeout(() => { window.location.reload();  }, 0);
+
+         navigate('/')
+    }
     const temp=data.posts
+    const developerId="clsd6tbz20ozg0aoahpfq40u5" 
     const reverseData=[...temp].reverse() // reversing the data of posts 
+
     return (
         <>
             <div className='dp   mt-3'>

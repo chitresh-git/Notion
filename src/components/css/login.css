@@ -1,0 +1,10 @@
+.logincont{
+    margin-bottom: 14vw;
+}
+
+@media only screen and (max-width: 768px) { 
+    .logincont{
+        margin-bottom: 46vw;
+
+    }
+}
