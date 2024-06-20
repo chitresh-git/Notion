@@ -95,7 +95,7 @@ const CreateAuthor = () => {
               </div>
 
               <div className="form-group my-3 text-uppercase">
-                <label htmlFor="emailInput">Email address *</label>
+                <label htmlFor="emailInput">Email *</label>
                 <input
                   type="email"
                   className="form-control my-3"
