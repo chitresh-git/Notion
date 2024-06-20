@@ -1,9 +1,14 @@
+
 .footer {
     text-align: center;
     background-color: black;
 }
 
-
+.footer-outer{    
+    width:100%;
+    bottom:0%;
+    
+}
 
 .footer-text {
     color: white;
