@@ -11,37 +11,35 @@ import client from './gqlClient/graphClient.js';
 
 const Navbar = () => {
     const contextapi = useContext(postcontext)
-    const { setpost, setuser,setflag } = contextapi
+    const { setpost, setuser, setflag } = contextapi
     const postId = "clshtr33f36140aoaw4kgbveg" // about post id (DND)
-    
 
-    
+
+
     const { loading, error, data } = useQuery(GET_POST_BY_ID, {
         variables: { postId },
     });
     if (loading) return <p> </p>;
     if (error) return <p>Error: {error.message}</p>;
-    
+
     const handleAbout = () => {   // set data of about post 
-        setpost({ post: data.post }) 
+        setpost({ post: data.post })
     }
-    const handleContact = () => {    // set data of developer (chitresh)
-        setuser({ author: data.post.author })
-    }
+
     const handleLogout = () => { // will logout and remove userid from the local cache 
         localStorage.removeItem('userId')
-        setTimeout(() => { window.location.reload();  }, 0);
+        setTimeout(() => { window.location.reload(); }, 0);
         setflag(0);
     }
     const handleflag = () => { // it helps in where to after login/signup , if flag-1 then it will rout to createpost after signin/up
         setflag(1);
     }
-    const handleProfile =async () => {  // will fetch the data of current logged in user 
-        const authorId=localStorage.getItem('userId')
-        const variables={authorId}
+    const handleProfile = async () => {  // will fetch the data of current logged in user 
+        const authorId = localStorage.getItem('userId')
+        const variables = { authorId }
         const data2 = await client.request(GET_AUTHOR_BY_ID, variables);
-        setuser({author:data2.author})
-        
+        setuser({ author: data2.author })
+
     }
     return (
         <div>
@@ -65,14 +63,14 @@ const Navbar = () => {
                             <Link to="/contributor" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
                                 Authors
                             </li> </Link>
-                           
-                           {/* all below buttons depends whether the user is logged in or not  */}
+
+                            {/* all below buttons depends whether the user is logged in or not  */}
 
                             <Link
                                 to={localStorage.getItem('userId') ? "/createPost" : "/login"}
                                 className='custom-no-decoration nav-class'
                             >
-                                <li className="nav-link active nav-item custom-no-decoration"onClick={() => { handleflag() }} > 
+                                <li className="nav-link active nav-item custom-no-decoration" onClick={() => { handleflag() }} >
                                     Post Something
                                 </li>
                             </Link>
@@ -105,18 +103,21 @@ const Navbar = () => {
                                 </Link>
                             )}
 
+                            <Link className='custom-no-decoration nav-class' to="/expandpost">
+                                <li><a class="nav-link active nav-item custom-no-decoration" onClick={() => { handleAbout() }}>About</a></li>
+                            </Link>
 
 
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    More
+                                    More Products
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <Link className='nav-class' to="/expandpost">
-                                        <li><a class="dropdown-item" onClick={() => { handleAbout() }}>About</a></li>
-                                    </Link>
-                                    <Link className='nav-class' to="/profile">
-                                        <li><a class="dropdown-item" onClick={() => { handleContact() }}>Contact</a></li>
+                                    <li className='nav-class' to="">
+                                        <li><a class="dropdown-item" href='https://one-note-zeta.vercel.app/' target='_blank' >OneNote</a></li>
+                                    </li>
+                                    <Link className='nav-class' to="/contact">
+                                        <li><a class="dropdown-item" >Contact</a></li>
                                     </Link>
                                 </ul>
                             </li>
