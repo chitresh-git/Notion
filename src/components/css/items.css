@@ -51,6 +51,8 @@
 .name {
   position: relative;
   cursor: pointer;
+  text-decoration: none;
+
 }
 
 .author-name{
