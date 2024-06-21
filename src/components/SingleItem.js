@@ -136,7 +136,7 @@ return (
         {data.posts.length > 0 && (
           <h1 className='heading heading-single mt-1'>More From {author.name}</h1>
         )}
-        <div className='ms-5 me-5 '>
+        <div className='singleItemsWidth '>
           {data.posts?.map((post) => { // this will call Noteitem component htmlFor each note 
             return <Items post={post} />
           })}

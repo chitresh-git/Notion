@@ -11,7 +11,8 @@
 
 @media only screen and (max-width: 768px) { 
     .homeItemsWidth{
-        width: 90%;
+        width: 100%;
         margin: auto;
+        /* font-size: x-small; */
     }
 }

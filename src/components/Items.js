@@ -38,10 +38,10 @@ const Items = (props) => {
         plainText = text;
     }
 
-    const maxLength = window.innerWidth < 768 ? 50 : 150; // set the text length according to window size 
+    const maxLength = window.innerWidth < 768 ? 0 : 150; // set the text length according to window size 
     if (plainText.length > maxLength) {
         plainText = plainText.substring(0, maxLength).trim();  // Truncating the content of post
-        plainText += '. . . .';
+        plainText += '';
     }
 
     return (
@@ -50,12 +50,12 @@ const Items = (props) => {
 
 
 
-            <a className='name fs-6 avatar-body' onClick={() => { handle2() }}>
+            <a className='name fs-6 avatar-body ' onClick={() => { handle2() }}>
 
-                <img src={author.avatar.url} alt="Avatar" class="avatar"></img>
-                <a class="name text-dark mx-2 author-name pt-3">{author.name}</a>
+                <img src={author.avatar.url} alt="Avatar" class="avatar "></img>
             </a>
 
+                <a class=" text-dark mx-2 author-name pt-3 mt-5">{author.name}</a>
             <div class="row g-0 bg-light position-relative box" onClick={() => { handlclick(title, post) }}>
 
                 <div class="col-md-5 mb-md-5 p-md-3" id='outer'>
@@ -67,7 +67,7 @@ const Items = (props) => {
                     <p class="card-text"><small class="text-body-secondary">Updated On &nbsp;{dateString}</small></p>
 
                     <p className='mb-0'>{plainText}</p>
-                    <p className='text-muted mt-0'>Click To Read More</p>
+                    {/* <p className='text-muted mt-0'>Click To Read More</p> */}
                 </div>
             </div>
 

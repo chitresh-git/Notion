@@ -24,7 +24,7 @@ const Home = () => {
     <div>
   
       <div className='justify-content-center item'>
-        <h1 className='home-heading mt-4'>Top  Notions </h1>
+        <h1 className='home-heading mt-2 mb-4'>Top  Notions </h1>
         <div className=' justify-content-center homeItemsWidth'>
           {reverseData.map((post) => { // this will call Noteitem component htmlFor each note 
             return <Items  post={post} />

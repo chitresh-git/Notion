@@ -2,8 +2,6 @@
     width: 54%; 
     margin: auto;
     font-family: 'Times New Roman', Times, serif;
-
-
 }
 
 .avatarprofile {
@@ -51,7 +49,7 @@
 
 @media only screen and (max-width: 768px) { 
 .dp{
-    width: 95%;
+    width: 90%;
     margin: auto;
 }
 .avatarprofile{
@@ -72,5 +70,9 @@
 }
 .emptypost{
     margin-bottom: 90vw;
+}
+.profileItemsWidth{
+    width: 100%;
+    margin:auto;
 }
 }
