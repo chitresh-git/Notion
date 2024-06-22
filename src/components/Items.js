@@ -14,10 +14,10 @@ const Items = (props) => {
         setpost({ post: post })
         navigate("/expandpost")
     }
-    
+
     if (!author) {
         return null; // Return nothing if author is null
-      }
+    }
     const handle2 = () => {
         setuser({ author: author })
         navigate("/profile")
@@ -38,12 +38,12 @@ const Items = (props) => {
         plainText = text;
     }
 
-    const maxLength = window.innerWidth < 768 ? 0 : 200; // set the text length according to window size 
+    const maxLength = window.innerWidth < 768 ? 0 : 150; // set the text length according to window size 
     if (plainText.length > maxLength) {
         plainText = plainText.substring(0, maxLength).trim();  // Truncating the content of post
         plainText += '. . .';
     }
-    if(maxLength==0){ plainText=""}
+    if (maxLength == 0) { plainText = "" }
 
     return (
 
@@ -56,7 +56,8 @@ const Items = (props) => {
                 <img src={author.avatar.url} alt="Avatar" class="avatar "></img>
             </a>
 
-                <a class=" text-dark mx-2 author-name pt-3 mt-5">{author.name}</a>
+            <a class=" text-dark mx-2 author-name pt-3 mt-5 " onClick={() => { handle2() }} >{author.name}</a>
+
             <div class="row g-0 bg-light position-relative box" onClick={() => { handlclick(title, post) }}>
 
                 <div class="col-md-5 mb-md-5 p-md-3" id='outer'>
