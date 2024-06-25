@@ -117,6 +117,9 @@ const Navbar = () => {
                                 <ul class="dropdown-menu">
                                     <li className='nav-class' to="">
                                         <li><a class="dropdown-item" href='https://one-note-zeta.vercel.app/' target='_blank' >OneNote</a></li>
+                                        <li><a class="dropdown-item" href='https://global-post.vercel.app/'target='_blank' >Global Post</a></li>
+                                        <li><a class="dropdown-item" href='https://ad-shield.vercel.app/' target='_blank' >Ad_Shield</a></li>
+                                        <li><a class="dropdown-item" href='https://show-gen.vercel.app/' target='_blank' >ShowGen</a></li>
                                     </li>
                                     <Link className='nav-class' to="/contact">
                                         <li><a class="dropdown-item" >Contact</a></li>
