@@ -1,5 +1,5 @@
 import './css/navbar.css'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 
 import { useQuery } from '@apollo/client';
 import { GET_POST_BY_ID } from '../graphql/query4'; // Importing the GraphQL query
@@ -13,6 +13,7 @@ const Navbar = () => {
     const contextapi = useContext(postcontext)
     const { setpost, setuser, setflag } = contextapi
     const postId = "clshtr33f36140aoaw4kgbveg" // about post id (DND)
+    const navigate=useNavigate();
 
 
 
@@ -39,6 +40,7 @@ const Navbar = () => {
         const variables = { authorId }
         const data2 = await client.request(GET_AUTHOR_BY_ID, variables);
         setuser({ author: data2.author })
+        navigate('/profile')
 
     }
     return (
@@ -96,7 +98,7 @@ const Navbar = () => {
                             )}
 
                             {localStorage.getItem('userId') && (
-                                <Link to="/profile" className='custom-no-decoration nav-class'>
+                                <Link to="#" className='custom-no-decoration nav-class'>
                                     <li className="nav-link active nav-item custom-no-decoration" onClick={() => { handleProfile() }}>
                                         Profile
                                     </li>
