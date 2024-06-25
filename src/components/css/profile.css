@@ -45,6 +45,7 @@
 
 .emptypost{
     margin-bottom: 20vw;
+    padding-bottom: 200px;
 }
 
 @media only screen and (max-width: 768px) { 
@@ -74,5 +75,9 @@
 .profileItemsWidth{
     width: 100%;
     margin:auto;
+}
+
+.emptypost{
+    padding-bottom: 250px;
 }
 }
