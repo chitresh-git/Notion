@@ -64,6 +64,12 @@
 
 }
 
+.img-cropped {
+  height: 200px;
+  object-fit:cover; /* This will ensure the image is cropped */
+  width: 100%;
+}
+
 
 @media only screen and (max-width: 768px) {
   #item {

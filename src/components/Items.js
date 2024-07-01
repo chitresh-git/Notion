@@ -38,7 +38,7 @@ const Items = (props) => {
         plainText = text;
     }
 
-    const maxLength = window.innerWidth < 768 ? 0 : 150; // set the text length according to window size 
+    const maxLength = window.innerWidth < 768 ? 0 : 200; // set the text length according to window size 
     if (plainText.length > maxLength) {
         plainText = plainText.substring(0, maxLength).trim();  // Truncating the content of post
         plainText += '. . .';
@@ -62,7 +62,7 @@ const Items = (props) => {
 
                 <div class="col-md-5 mb-md-5 p-md-3" id='outer'>
 
-                    <img src={pic.url} class="w-100" alt="..." id='img' />
+                    <img src={pic.url} class="w-100 img-cropped " alt="..." id='img' />
                 </div>
                 <div class="col-md-6 p-2 ps-md-0 " id='inner'>
                     <h5 class="mt-0 mb-0" id='title'>{title}</h5>
