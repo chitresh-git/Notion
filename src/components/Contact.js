@@ -8,7 +8,7 @@ const Contact = () => {
   const navigate = useNavigate();
   const contextapi = useContext(postcontext);
   const { setuser } = contextapi;
-  const postId = "clshtr33f36140aoaw4kgbveg"; // about post id (DND)
+  const postId = "cly3ex28t0uym07pf9rjazvyo"; // about post id (DND)
 
   const { data } = useQuery(GET_POST_BY_ID, {
     variables: { postId },

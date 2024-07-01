@@ -12,7 +12,7 @@ import client from './gqlClient/graphClient.js';
 const Navbar = () => {
     const contextapi = useContext(postcontext)
     const { setpost, setuser, setflag } = contextapi
-    const postId = "clshtr33f36140aoaw4kgbveg" // about post id (DND)
+    const postId = "cly3ex28t0uym07pf9rjazvyo" // about post id (DND)
     const navigate=useNavigate();
 
 
