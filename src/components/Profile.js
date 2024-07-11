@@ -85,7 +85,7 @@ const Profile = () => {
                     <h1 className='heading mb-4'>Recent Notions</h1>
                 )}
                 {data.posts.length == 0 && (
-                    <h1 className='heading mb-4 emptypost'>you did not post anything yet</h1>
+                    <h1 className='heading mb-4 emptypost'> did not post anything yet</h1>
 
                 )}
 

@@ -144,7 +144,7 @@ const CreateAuthor = () => {
                   type="text"
                   className="form-control my-3"
                   id="instaInput"
-                  placeholder="Instagram (optional)"
+                  placeholder="Instagram url (optional)"
                   onChange={(e) => setInsta(e.target.value)}
                   value={insta}
                 />
@@ -156,7 +156,7 @@ const CreateAuthor = () => {
                   type="text"
                   className="form-control my-3"
                   id="linkedinInput"
-                  placeholder="LinkedIn (optional)"
+                  placeholder="LinkedIn url (optional)"
                   onChange={(e) => setLinkedin(e.target.value)}
                   value={linkedin}
                 />
