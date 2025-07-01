@@ -14,7 +14,7 @@ const Contributers = () => {
         <div>
             <div className='contributor '>
               
-                <h1 className=' d-flex justify-content-center mt-3'>   TOP AUTHORS </h1>
+                <h1 className=' d-flex justify-content-center mt-3'>   TOP Clients </h1>
                 <div>
                     <div className='m-5 justify-content-center '>
                         {data.authors.map((author) => { // this will call Noteitem component htmlFor each note 
