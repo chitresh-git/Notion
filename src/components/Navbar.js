@@ -69,7 +69,7 @@ const Navbar = () => {
                                         {/* below three lines need to be removed  */}
             
                                  <Link to="https://forms.visme.co/fv/meqq7ndn-emxj6pr" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
-                                Happy Clients
+                                Contact Form
                             </li> </Link>
 
                             {/* all below buttons depends whether the user is logged in or not  */}
