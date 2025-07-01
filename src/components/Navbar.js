@@ -66,6 +66,11 @@ const Navbar = () => {
                                 Happy Clients
                             </li> </Link>
 
+                                     // below three needs to be removed
+                                       <Link className='nav-class' to="https://forms.visme.co/fv/meqq7ndn-emxj6pr">
+                                        <li><a class="dropdown-item" >Contact Us</a></li>
+                                    </Link>
+
                             {/* all below buttons depends whether the user is logged in or not  */}
 
                             <Link
@@ -121,9 +126,10 @@ const Navbar = () => {
                                         <li><a class="dropdown-item" href='https://ad-shield.vercel.app/' target='_blank' >Ad_Shield</a></li>
                                         <li><a class="dropdown-item" href='https://show-gen.vercel.app/' target='_blank' >ShowGen</a></li>
                                     </li>
-                                    <Link className='nav-class' to="/contact">
-                                        <li><a class="dropdown-item" >Contact</a></li>
-                                    </Link>
+                                   // <Link className='nav-class' to="/contact">
+                               
+                                        //<li><a class="dropdown-item" >Contact Us</a></li>
+                                    //</Link>
                                 </ul>
                             </li>
 
