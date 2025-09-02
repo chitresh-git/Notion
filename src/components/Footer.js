@@ -8,7 +8,7 @@ const Footer = () => {
             <div class="card footer-outer" >
                 <div class="card-header footer" >
                     <Link to={`mailto:${email}`} className='footer-text'>
-                        <a >nandinirathod9669@gmail.com</a>
+                        <a >chitresh.cm@gmail.com</a>
                     
                     </Link> 
                 </div>
