@@ -63,7 +63,7 @@ const Navbar = () => {
                                 </Link>
                             </li>
                             <Link to="/contributor" className='custom-no-decoration nav-class'>   <li class="nav-link active nav-item custom-no-decoration">
-                                Happy Clients
+                               Authors
                             </li> </Link>
 
 
